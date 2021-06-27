@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "detalle_ventas",
+  "info": {
+    "name": "DetalleVenta"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FechaHoraVenta": {
+      "type": "datetime"
+    },
+    "Cantidad": {
+      "type": "integer"
+    },
+    "Subtotal": {
+      "type": "decimal"
+    },
+    "producto": {
+      "via": "detalle_ventas",
+      "model": "producto"
+    },
+    "venta": {
+      "model": "venta",
+      "via": "detalle_ventas"
+    }
+  }
+}

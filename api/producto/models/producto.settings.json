@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productos",
+  "info": {
+    "name": "Producto",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "precio": {
+      "type": "decimal"
+    },
+    "categoria": {
+      "model": "categoria",
+      "via": "productos"
+    },
+    "detalle_ventas": {
+      "via": "producto",
+      "collection": "detalle-venta"
+    },
+    "Activar": {
+      "type": "boolean"
+    }
+  }
+}

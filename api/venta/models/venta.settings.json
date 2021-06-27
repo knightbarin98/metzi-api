@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ventas",
+  "info": {
+    "name": "Venta"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FechaHoraVenta": {
+      "type": "datetime"
+    },
+    "Total": {
+      "type": "decimal"
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "ventas"
+    },
+    "detalle_ventas": {
+      "via": "venta",
+      "collection": "detalle-venta"
+    }
+  }
+}
